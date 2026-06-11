@@ -1,0 +1,92 @@
+{
+  "schema": "stegverse.admissibility_receipt.v1",
+  "timestamp_utc": "2026-06-11T16:51:55Z",
+  "entity": "AdmittedCode",
+  "repo": "admittedcode/repo-guard",
+  "release": "v1.0.0",
+  "stage": "publish",
+  "actor": "ci/release",
+  "declared_action": "publish_product_release",
+  "input": {
+    "path": ".",
+    "sha256": "sha256:cf4e700e513c035f50876d4846be88560fa50663167b11937e35a6d2ca7f4d2f",
+    "excluded_paths": [
+      ".git/**",
+      "**/__pycache__/**",
+      "**/*.pyc",
+      "**/*.pyo",
+      "**/*.egg-info/**",
+      "node-compile-cache/**",
+      "receipts/**",
+      "reports/**",
+      "dist/**",
+      "build/**",
+      "admissibility-receipt.json",
+      "admissibility_receipt.json",
+      "*receipt*.json"
+    ]
+  },
+  "manifest": {
+    "path": "examples/repo-guard.json",
+    "sha256": "sha256:4190ea75cf490423abe6023d91c3f44d192a8614f587d5cd434ae3dd6b2118e9"
+  },
+  "transition": {
+    "transition_class": "release",
+    "transition_cell": "release.publish",
+    "authority_class": "policy_decision_bound",
+    "state_effect": "publishable_artifact",
+    "binding_level": "receipt_bound"
+  },
+  "authority_evidence": {
+    "tvc_policy_hash": "sha256:UNSPECIFIED",
+    "tv_receipt_refs": [],
+    "formalism_refs": []
+  },
+  "decision": {
+    "engine": "StegCore",
+    "engine_version": "0.1.0",
+    "engine_hash": "sha256:f8144c5e098a201eccd3362d28e409bb57a10a0e05d43beca903819bddb2d618",
+    "decision": "ALLOW",
+    "reason_code": "OK",
+    "basis": "conforms to declared manifest under GCAT/BCAT evaluation",
+    "fingerprint": "sha256:5696a457a549907fb9eee1c8c008b434ffb411f43a151610932d238d7ab4d393"
+  },
+  "enforcement": {
+    "manager": "StegCGE",
+    "manager_version": "0.1.0",
+    "manager_hash": "sha256:b927eead58eb878337ef6151ad92f177a11bac5706c606351b65f8be48495ef9",
+    "route": "ALLOW",
+    "enacted_decision_fingerprint": "sha256:5696a457a549907fb9eee1c8c008b434ffb411f43a151610932d238d7ab4d393",
+    "portability_class": "hybrid",
+    "platform_dependencies": [
+      "ci_runner_identity"
+    ],
+    "fail_closed_reason": ""
+  },
+  "verification": {
+    "state_hash": "sha256:cf4e700e513c035f50876d4846be88560fa50663167b11937e35a6d2ca7f4d2f",
+    "replay_hash": "sha256:0a3c72ce97f69cd8de157975f66be4ad095742deba89d5b365579d7101c16a00",
+    "reverification_possible": true,
+    "reverify_command": "admissibility-verify <receipt> --repo <path>"
+  },
+  "canonicalization": {
+    "method": "stegverse.jcs.v1",
+    "hash": "sha256",
+    "notes": "UTF-8; keys sorted; separators ',', ':'; no floats in hashed payloads; LF recommended for files."
+  },
+  "scope": {
+    "asserts": [
+      "Conforms to declared manifest under GCAT/BCAT at this release.",
+      "Reproducible from committed policy + this receipt."
+    ],
+    "does_not_assert": [
+      "Security, vulnerability-freedom, or penetration resistance.",
+      "Regulatory or legal compliance (e.g. PCI, HIPAA, GDPR).",
+      "Fitness for any particular purpose.",
+      "Runtime correctness beyond declared policy."
+    ]
+  },
+  "outputs": [],
+  "previous_receipt_hash": "sha256:GENESIS",
+  "receipt_id": "sha256:cbe82c874c09cc1449144696eef20e184f4ea14350c51e7177c80877d97f419e"
+}

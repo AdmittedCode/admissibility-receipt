@@ -1,0 +1,20 @@
+name: Self Test
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -e ".[dev]"
+      - name: Regression — generate / verify / tamper-detection
+        run: python tests/test_receipt.py
+      - name: CLI smoke — generate then verify a real repo
+        run: |
+          mkdir -p demo && echo '{"governance_role":"engine"}' > demo/repo-guard.json && echo x > demo/a.py
+          admissibility-generate demo --repo-name demo/x --release v0 --manifest repo-guard.json --out r.json
+          admissibility-verify r.json --repo demo
+          echo "generate+verify roundtrip ok"

@@ -34,6 +34,23 @@ admissibility-verify receipt.json --repo ./my-repo
 admissibility-fleet ./receipts/ --fail-on-invalid
 ```
 
+## Usage Snippet
+
+Admissibility Receipts generates, verifies, and audits portable governance proof envelopes.
+
+```bash
+python -m pip install -e .
+python -m pytest
+admissibility-receipt generate --input examples/decision-event.json --out receipts/sample-receipt.json
+admissibility-receipt verify --receipt receipts/sample-receipt.json
+```
+
+See:
+
+```text
+docs/USAGE.md
+```
+
 ## What a receipt proves — and does not
 
 A receipt asserts the product conformed to its declared manifest under GCAT/BCAT

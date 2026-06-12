@@ -1,0 +1,25 @@
+{
+  "schema": "admittedcode.decision_event.v1",
+  "event_id": "demo-provider-harness-mock-allow",
+  "repo": "provider-harness",
+  "declared_action": "provider_harness_mock_allow",
+  "decision": "ALLOW",
+  "mode": "mock",
+  "key_requested": false,
+  "evidence": {
+    "request_hash": "sha256:example",
+    "consent_hash": "sha256:example",
+    "budget_hash": "sha256:example",
+    "coherency_report_hash": "sha256:example"
+  },
+  "scope": {
+    "asserts": [
+      "the declared request was evaluated under the declared path"
+    ],
+    "does_not_assert": [
+      "provider security",
+      "output correctness",
+      "guaranteed lower cost"
+    ]
+  }
+}

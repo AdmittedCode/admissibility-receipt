@@ -1,0 +1,19 @@
+{
+  "intake_id": "ADMISSIBILITY-RECEIPT-GCAT-BCAT-INTAKE-0001",
+  "repository": "AdmittedCode/admissibility-receipt",
+  "source_repository": "Admissible-Existence/GCAT-BCAT",
+  "source_status": "ACTIVATION-READY-SEED",
+  "purpose": "Bind portable admissibility receipts to the GCAT/BCAT cost-of-state-transitions and commit-boundary receipt model.",
+  "required_receipt_properties": [
+    "decision reproducible",
+    "scope non-claims present",
+    "transition fields present",
+    "authority evidence fields present",
+    "decision engine pinned"
+  ],
+  "non_claims": [
+    "A receipt does not authorize execution by itself.",
+    "Receipt verification does not prove regulatory compliance.",
+    "GCAT/BCAT activation readiness does not certify downstream products."
+  ]
+}
